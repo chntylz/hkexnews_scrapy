@@ -100,3 +100,9 @@ MONGODB_DB = 'database_name'
 MONGODB_COLLECTION = 'hkexnews'
 CHROMEDRIVER_PATH = '/home/user/chromedriver/chromedriver'
 CHROME_HEADLESS = True #comment it will become headless
+
+DOWNLOAD_HANDLERS = {'s3': None,}
+
+
+#from scrapy import optional_features
+#optional_features.remove('boto')

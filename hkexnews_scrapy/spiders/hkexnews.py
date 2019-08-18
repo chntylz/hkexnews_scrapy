@@ -10,14 +10,14 @@ class HkexnewsSpider(scrapy.Spider):
     start_urls = [
         'http://www.hkexnews.hk/sdw/search/mutualmarket.aspx?t=sh',
         'http://www.hkexnews.hk/sdw/search/mutualmarket.aspx?t=sz',
-        'http://www.hkexnews.hk/sdw/search/mutualmarket.aspx?t=hk',
+        #'http://www.hkexnews.hk/sdw/search/mutualmarket.aspx?t=hk',
     ]
 
    
     def __init__(self, *args, **kwargs):
         self.date = kwargs.get('date', datetime.date.strftime(datetime.date.today() + datetime.timedelta(-1) , "%Y%m%d"))
         self.formdate = datetime.datetime.strptime( self.date,"%Y%m%d").strftime("%Y/%m/%d")
-        self.sqldate = datetime.datetime.strptime( self.date,"%Y%m%d").strftime("%Y-%m-%d")
+        self.sqldate  = datetime.datetime.strptime( self.date,"%Y%m%d").strftime("%Y-%m-%d")
 
     def parse(self, response):
         
